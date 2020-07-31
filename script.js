@@ -60,10 +60,14 @@ function printLetterByLetter(str) {
   }, 50);
 }
 
-function textToSpeech(str) {
-  var msg = new SpeechSynthesisUtterance();
-  msg.text = str;
-  window.speechSynthesis.cancel();
+const utterance = new SpeechSynthesisUtterance();
+window.speechSynthesis.onvoiceschanged = function () {
+  const voices = window.speechSynthesis.getVoices();
+  utterance.voice = voices[0];
+};
 
-  window.speechSynthesis.speak(msg);
+function textToSpeech(str) {
+  utterance.text = str;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
 }
