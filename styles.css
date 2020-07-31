@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-image: url("assets/background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.wf-loader {
+  visibility: hidden;
+  font-family: "VT323", monospace;
+}
+
+.dad {
+  position: fixed;
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-30%);
+  max-height: 80vh;
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dad img {
+  width: 100%;
+}
+
+.dad .top.speaking {
+  animation: speak 0.4s infinite;
+}
+
+@keyframes speak {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+button {
+  font-size: 3rem;
+  background: linear-gradient(#02efad, #09b786);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  color: #002f22;
+  border: none;
+  padding: 3rem 5rem;
+  border-radius: 10rem;
+  border-right: 0.4rem solid #006d4f;
+  border-bottom: 0.4rem solid #006d4f;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button:hover {
+  background: linear-gradient(#07d89e, #0ba77b);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  border: none;
+}
+
+.text {
+  font-family: "VT323", monospace;
+  width: 100%;
+  position: fixed;
+  max-width: 60rem;
+  left: 30%;
+  transform: translateX(-30%);
+  top: 2vw;
+  background: rgb(0 0 0 / 60%);
+  color: white;
+  font-size: 4rem;
+  padding: 0.4rem 1rem;
+}
+
+.text:empty {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  button {
+    font-size: 2rem;
+    padding: 1.5rem 3rem;
+    white-space: nowrap;
+  }
+
+  .text {
+    font-size: 3rem;
+  }
+}
