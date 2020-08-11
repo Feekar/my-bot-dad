@@ -63,7 +63,7 @@ function printLetterByLetter(str) {
 const utterance = new SpeechSynthesisUtterance();
 window.speechSynthesis.onvoiceschanged = function () {
   const voices = window.speechSynthesis.getVoices();
-  utterance.voice = voices[0];
+  utterance.voice = voices[5];
 };
 
 function textToSpeech(str) {
